@@ -1,0 +1,37 @@
+<div><h2>parent works!  {{NewRltn}}</h2></div>
+<div>
+    <input class="text" [(ngModel)]="fillist"/>
+</div>
+<div><app-child  #child [name]="NewName" [products]="people"  (Cou)="click2($event)"></app-child></div>
+<div>
+    <div>
+        <h2>{{child.chname}}</h2>
+        
+        <button class="btn btn-danger" (click)="child.chref()">Template Refernce</button>
+    </div>
+    <div *ngFor="let x of newpeople">
+      <h3><a [routerLink]="['/Parent',x.id]">{{x.name|lowercase|mypipe:'s'}}  {{x.id}}</a></h3>
+    </div>
+    <div>
+        <button class="btn btn-secondary "  (click)="toggle()">Click to Show Image if </button>
+        <div *ngIf="showimage"> 
+            <h2>Image..ngIf....Image</h2>
+        </div>
+    </div>
+    
+    <div>
+        <button class="btn btn-secondary" (click)="toggleswi()">Click to Show Image switch </button>
+        <div [ngSwitch]="showim">
+            <div *ngSwitchCase=true>
+                <h2>Image..ngSwitch....Image</h2>
+            </div>
+            <div *ngSwitchCase=false></div>
+            <div *ngSwitchDefault>sorry</div>
+        </div>
+
+    </div>
+    
+</div>
+
+
+<div><button class="btn btn-danger" (click)="backfn()">back</button></div>

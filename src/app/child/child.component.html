@@ -1,0 +1,19 @@
+<div>
+    <h2>{{name}}</h2>
+    <div>
+        
+        <button class="btn btn-primary" (click)="onClick()">Click for nest</button>
+        <br>
+        <div><input [(ngModel)]="hidform">Enter password(subi)</div>
+        <div [hidden]='hidform!="subi"'> 
+            <h2>Hidden Check</h2>
+        </div>
+        <br>
+        <div><h1 [ngStyle]="{'color':'red'}">{{products.length}}</h1></div>
+        
+        <br>
+        <h1>subi test test test</h1>
+        <a routerLink="/welcome"> welcome</a>
+    </div>
+    
+</div>

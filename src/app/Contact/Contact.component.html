@@ -1,0 +1,20 @@
+<h1>Template based form validation</h1>
+<br>
+<br>
+<form (ngSubmit)="sub(name)" #name="ngForm">
+  <div class="form-group">
+    <label for="firstname">Firstname</label>
+    <input required minlength="3"pattern="subi" ngModel name="firstname" #firstname="ngModel" id="firstname" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="firstname.touched && !firstname.valid">
+      <div *ngIf="firstname.errors?.['required']" >Firstname required</div>
+      <div *ngIf="firstname.errors?.['minlength']" >MinLength is {{firstname.errors?.['minlength'].requiredLength}}</div>
+      <div *ngIf="firstname.errors?.['pattern']" >pattern missmatch</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment </label>
+    <textarea ngModel name="comment"  id="comment" cols="30" rows="10" class="form-control"></textarea>
+    
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>

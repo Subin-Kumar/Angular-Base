@@ -1,0 +1,7 @@
+<br><br>
+<ng-content select=".head"></ng-content>
+<ul *ngFor="let x of productdata" class="list-group">
+  <li class="list-group-item"><h3 [ngStyle]="{'color':'green'}">{{x.name}}</h3></li>
+
+</ul>
+<ng-content select=".tail"></ng-content>
